@@ -24,7 +24,7 @@ setopt HIST_IGNORE_DUPS          # Do not record an entry that was just recorded
 setopt HIST_IGNORE_SPACE         # Ignore commands that start with space
 
 setopt notify
-unsetopt autocd beep extendedglob nomatch
+unsetopt autocd beep 
 # End of lines configured by zsh-newuser-install
 # PROMPT
 PROMPT='%F{green}%n%f @ %F{blue}%2~%f %# '
