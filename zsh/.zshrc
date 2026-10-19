@@ -20,6 +20,9 @@ setopt HIST_IGNORE_ALL_DUPS      # Delete old duplicate entry when a new entry i
 setopt HIST_SAVE_NO_DUPS         # Do not write duplicate entries to the history file
 setopt HIST_FIND_NO_DUPS         # Do not display duplicates when searching history
 setopt HIST_IGNORE_DUPS          # Do not record an entry that was just recorded again
+# security
+setopt HIST_IGNORE_SPACE         # Ignore commands that start with space
+
 setopt notify
 unsetopt autocd beep extendedglob nomatch
 # End of lines configured by zsh-newuser-install
