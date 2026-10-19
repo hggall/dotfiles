@@ -15,11 +15,16 @@ compinit
 HISTFILE=~/.cache/zsh
 HISTSIZE=10000
 SAVEHIST=10000
+# Deduplication Options
+setopt HIST_IGNORE_ALL_DUPS      # Delete old duplicate entry when a new entry is saved
+setopt HIST_SAVE_NO_DUPS         # Do not write duplicate entries to the history file
+setopt HIST_FIND_NO_DUPS         # Do not display duplicates when searching history
+setopt HIST_IGNORE_DUPS          # Do not record an entry that was just recorded again
 setopt notify
 unsetopt autocd beep extendedglob nomatch
 # End of lines configured by zsh-newuser-install
 # PROMPT
-PROMPT='%F{green}%n%f @ %F{blue}%2~%f > '
+PROMPT='%F{green}%n%f @ %F{blue}%2~%f %# '
 
 # Rebind the delete key on the keyboard
 bindkey "^[[3~" delete-char
