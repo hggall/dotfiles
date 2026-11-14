@@ -1,5 +1,6 @@
 # The following lines were added by compinstall
-
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case insensitive matching
+zstyle ':completion:*' group-name # Group results by category
 zstyle ':completion:*' file-sort name
 zstyle ':completion:*' insert-unambiguous false
 zstyle ':completion:*' list-colors ''
@@ -22,6 +23,11 @@ setopt HIST_FIND_NO_DUPS         # Do not display duplicates when searching hist
 setopt HIST_IGNORE_DUPS          # Do not record an entry that was just recorded again
 # security
 setopt HIST_IGNORE_SPACE         # Ignore commands that start with space
+# sort options
+setopt NUMERIC_GLOB_SORT
+# autocompletion
+setopt COMPLETE_IN_WORD
+setopt GLOB_DOTS
 
 setopt notify
 unsetopt autocd beep 
@@ -36,3 +42,14 @@ bindkey "^[[F" end-of-line
 bindkey '\C-r' history-incremental-search-backward
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+
+# Enable Vi editing mode
+bindkey -v
+
+# Make switching modes instant (removes the default ~0.4s escape delay)
+export KEYTIMEOUT=1
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
+# Alt + v opens the command and edits it with $EDITOR
+bindkey '\ev' edit-command-line
