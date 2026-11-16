@@ -1,0 +1,5 @@
+require("config.options")
+require("config.keymaps")
+require("config.plugins")
+require("plugins.lsp")
+require("plugins.oil")
